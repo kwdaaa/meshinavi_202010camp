@@ -34,7 +34,8 @@
             </tr>
         </tbody>
     </table>
-    
+
+    {{-- actionを使うと、アドレスを指定しなくてもいい。コントローラーから辿ってくれる。 --}}
     <a href="{{ action('RestaurantController@index') }}">戻る</a>    
 </body>
 </html>
