@@ -14,13 +14,17 @@
             <tr>
                 <th>店名</th>
                 <td>
-                    <p>{{ $restaurant->name }}{{ $restaurant->recommend }}位</p>
+                    <p>{{ $restaurant->name }}</p>
                     <p>{{ $restaurant->name_kana }}</p>
                 </td>
             </tr>
             <tr>
                 <th>住所</th>
                 <td>{{ $restaurant->address }}</td>
+            </tr>
+            <tr>
+                <th>カテゴリー</th>
+                <td>{{ $restaurant->category->name }}</td>
             </tr>
             <tr>
                 <th>営業時間</th>

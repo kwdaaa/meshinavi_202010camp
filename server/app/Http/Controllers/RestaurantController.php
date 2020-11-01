@@ -19,15 +19,20 @@ class RestaurantController extends Controller
             $query->where('name', 'like', '%' . $name . '%');
         }
         
-        if ($category) {
-            $query->where('category', 'like', '%' . $name . '%');
-        }
+        if($category) {
+            // $query->where('category', 'like', '%' . $category . '%');
 
+            // $qは戻り値を受け取ってる。
+            $query->whereHas('category', function($q) use ($category) {
+                $q->where('name', 'like', '%' . $category . '%');
+            });
+        }
         // 10件表示
         $restaurants = $query->simplePaginate(10);
 
         // 最後尾に追加
         $restaurants->appends(compact('name', 'category'));
+    
 
         // 【検索方法１:拡張性がない】
         // likeで一致するもの
