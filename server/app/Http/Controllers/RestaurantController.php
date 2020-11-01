@@ -28,7 +28,7 @@ class RestaurantController extends Controller
             });
         }
         // 10件表示
-        $restaurants = $query->simplePaginate(10);
+        $restaurants = $query->simplePaginate(5);
 
         // 最後尾に追加
         $restaurants->appends(compact('name', 'category'));

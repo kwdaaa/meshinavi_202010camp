@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         // 順番重要！先にカテゴリーidを準備
         $this->call(CategoryTableSeeder::class);
         $this->call(RestaurantTableSeeder::class);
+        $this->call(MenuTableSeeder::class);
     }
 }
