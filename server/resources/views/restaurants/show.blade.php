@@ -3,6 +3,9 @@
 @section('title', '詳細画面')
 
 @section('content')    
+
+@include('layouts.restaurant', compact('restaurant'))
+
     <table class="table-bordered mb-5 mt-3">
 
         {{-- span="1"でカラムの１つ目の装飾適用 --}}
@@ -11,7 +14,7 @@
             <tr>
                 <th>店名</th>
                 <td>
-                    <p>{{ $restaurant->name }}</p>
+                    <p>{{ $restaurant->name }}{{ $restaurant->recommend }}位</p>
                     <p>{{ $restaurant->name_kana }}</p>
                 </td>
             </tr>
